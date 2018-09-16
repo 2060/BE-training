@@ -2,14 +2,18 @@ package com.training.spring.training.service.impl;
 
 import com.training.spring.training.dto.UserDto;
 import com.training.spring.training.model.User;
+import com.training.spring.training.repository.UserRepository;
 import com.training.spring.training.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
 
+  @Autowired
+  private UserRepository userRepository;
 
   @Override
   public void createUser(User user) {
@@ -23,11 +27,7 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public List<UserDto> getUsers() {
-    List<UserDto> userDtos = new ArrayList<>();
-    for (int i = 0; i < 4; i++) {
-      UserDto user = new UserDto(i + 1, "test" + i, "test" + i + "@gmail.com", "Cong Hoa Street");
-      userDtos.add(user);
-    }
+   List<User> users = (List<User>) userRepository.findAll();
     return userDtos;
   }
 }
