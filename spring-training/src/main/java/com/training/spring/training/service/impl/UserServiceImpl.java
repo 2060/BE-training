@@ -16,11 +16,11 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private UserRepository userRepository;
 
-  UserMapper userMapper = Mappers.getMapper(UserMapper.class);
+  private UserMapper userMapper = Mappers.getMapper(UserMapper.class);
 
   @Override
   public void createUser(User user) {
-    //TODO
+    userRepository.save(user);
   }
 
   @Override
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public List<UserDto> getUsers() {
-   List<User> users = (List<User>) userRepository.findAll();
+    List<User> users = (List<User>) userRepository.findAll();
     return userMapper.userToDtos(users);
   }
 }

@@ -1,5 +1,4 @@
-INSERT INTO user(first_name, last_name, email) VALUES('Le Van','An', 'an.vl@pycogroup.com');
-INSERT INTO user(first_name, last_name, email) VALUES('Nguyen Ngoc','Hung', 'hung.nn@pycogroup.com');
-INSERT INTO user(first_name, last_name, email) VALUES('Pham Van','Toan', 'toan.vp@pycogroup.com');
-INSERT INTO user(first_name, last_name, email) VALUES('Le Huu','Chi', 'chi.hl@pycogroup.com');
-INSERT INTO user(first_name, last_name, email) VALUES('Do Thanh','Nam', 'nam.dt@pycogroup.com');
+INSERT INTO db_test."user"(id, first_name, last_name, email) VALUES(1, 'Le Van','An', 'an.vl@pycogroup.com');
+INSERT INTO db_test."user"(id, first_name, last_name, email) VALUES(2, 'Nguyen Ngoc','Hung', 'hung.nn@pycogroup.com');
+INSERT INTO db_test."user"(id, first_name, last_name, email) VALUES(3, 'Pham Van','Toan', 'toan.vp@pycogroup.com');
+INSERT INTO db_test."user"(id, first_name, last_name, email) VALUES(4, 'Le Huu','Chi', 'chi.hl@pycogroup.com');
